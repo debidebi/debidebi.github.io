@@ -38,19 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
   body = document.getElementById('body');
   header = document.getElementById('header');
   pickButton = document.getElementById('pickButton');
+  pairButton = document.getElementById('pairButton');
   choice = document.getElementById('choice');
   aList = document.getElementById('aList');
 
   pickButton.addEventListener('click', pickOnClick );
+  pairButton.addEventListener('click', pairOnClick );
   aList.addEventListener('click', aListOnClick );
+  
 
   // build the attendance list
   for (let i=0; i<students.length; i++) {
-    let li = document.createElement('li');
-    li.innerText = students[i];
-    aList.append(li);
+    let ul = document.createElement('ul');
+    ul.innerText = students[i];
+    aList.append(ul);
   }
 });
+
+
 
 var pickOnClick = function (event) {
   choice.innerHTML = '&nbsp;'
@@ -73,15 +78,5 @@ var aListOnClick = function (event) {
     event.target.style.textDecoration = 'line-through';
   }
 }
-© 2017 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
+
 
