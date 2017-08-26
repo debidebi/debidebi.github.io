@@ -77,7 +77,8 @@ var pickOnClick = function (event) {
 }
 
 var pairOnClick = function (event) {
-var Copy1 = [];
+
+   choice.innerHTML = '&nbsp;'
 var Copy2 = [];
   Copy1.innerHTML = '&nbsp;'
   Copy2.innerHTML = '&nbsp;'
