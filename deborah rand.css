@@ -12,13 +12,15 @@ body {
   height: 100vh;
 
   font-family: verdana;
-  background-color: lightgreen;
+  background-color: darkblue;
   text-align: center;
 }
 
 ul{
   font-family: verdana;
   text-decoration: none;
+  background-color: lightblue;
+  color: darkblue;
 }
 
 button {
