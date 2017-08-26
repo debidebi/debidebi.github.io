@@ -18,7 +18,7 @@ body {
 
 ul{
   font-family: verdana;
-  text-decoration: none;
+  list-style: none;
 }
 
 button {
