@@ -1,5 +1,4 @@
 var pickButton;
-var pairButton;
 var newButton;
 var header;
 var body;
@@ -43,14 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
   body = document.getElementById('body');
   header = document.getElementById('header');
   pickButton = document.getElementById('pickButton');
-  pairButton = document.getElementById('pairButton');
+  newButton = document.getElementById('newButton');
   choice = document.getElementById('choice');
-  Copy1 = document.getElementById('Copy1');
-  Copy2 = document.getElementById('Copy2');
   aList = document.getElementById('aList');
 
   pickButton.addEventListener('click', pickOnClick );
-  pairButton.addEventListener('click', pairOnClick );
+  newButton.addEventListener('click', newOnClick );
   aList.addEventListener('click', aListOnClick );
 
   // build the attendance list
@@ -77,27 +74,8 @@ var pickOnClick = function (event) {
   }, 200);
 }
 
-var pairOnClick = function (event) {
-var Copy1 = [];
-var Copy2 = [];
-  Copy1.innerHTML = '&nbsp;'
-  Copy2.innerHTML = '&nbsp;'
-  Copy1 = students.slice(0, students.length/2);
-  Copy2 = students.slice(((students.length/2)+1),students.length); 
-  var rand1 = Copy1.splice(Math.floor(Math.random() * Copy1.length), 1);
-  var rand2 = Copy2.splice(Math.floor(Math.random() * Copy2.length), 1);
-  var x = window.setInterval(() => {
-    if (colors[cur] === undefined) {
-      window.clearInterval(x);
-      cur = 0;
-      Copy1.innerText = rand1;
-      Copy2.innerText = rand2;
-      return;
-    }
-    if (colors[cur]) header.style.color = colors[cur];
-    if (colors[cur-1]) body.style.backgroundColor = colors[cur-1];
-    cur += 1;
-  }, 200);
+var newOnClick = function (event) {
+alert("Absolutely Nothing Happens")
 }
 
 var aListOnClick = function (event) {
