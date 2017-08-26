@@ -4,8 +4,10 @@ var header;
 var body;
 var choice;
 var aList;
-
-
+var numPlace;
+var removeFromList;
+var stud1;
+var stud2;
 
 var students = [
   "Kevin",
@@ -43,31 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
   pickButton = document.getElementById('pickButton');
   pairButton = document.getElementById('pairButton');
   choice = document.getElementById('choice');
+  stud2 = document.getElementById('stud1');
+  stud2 = document.getElementById('stud2');
   aList = document.getElementById('aList');
-  var aListOnClick = document.getElementById("myelement");
-var isStruck = (ele.style.getProperty("text-decoration") == "line-through");
 
   pickButton.addEventListener('click', pickOnClick );
-  pairButton.addEventListener('click', pickOnClick );
+  pairButton.addEventListener('click', pairOnClick );
   aList.addEventListener('click', aListOnClick );
-  
 
   // build the attendance list
   for (let i=0; i<students.length; i++) {
-    let ul = document.createElement('ul');
-    (if(isStruck  == 'line through')
-       continue; )
-    ul.innerText = students[i];
-    else aList.append(ul);
+    let li = document.createElement('li');
+    li.innerText = students[i];
+    aList.append(li);
   }
 });
 
-
-
 var pickOnClick = function (event) {
   choice.innerHTML = '&nbsp;'
-  var rand = students[Math.floor(Math.random() * students.length)];
-  
+  var rand = students.splice(Math.floor(Math.random() * students.length),1);
   var x = window.setInterval(() => {
     if (colors[cur] === undefined) {
       window.clearInterval(x);
@@ -80,26 +76,16 @@ var pickOnClick = function (event) {
     cur += 1;
   }, 200);
 }
-
 
 var pairOnClick = function (event) {
-  choice.innerHTML = '&nbsp;'
-  var rand = students[Math.floor(Math.random() * students.length)];
-    if(students[rand] === students[i]) {
-  students[rand] = students[rand++];
-    picks.push(students[i] + " gets " + students[random]);
-    used.push(students[rand]);
-} else {
-    picks.push(students[i] + " gets " + students[random]);
-    used.push(students[rand]);
-
-}
-
-console.log("picked array: ")
-for(var k=0; k<picks.length; k++) {
-console.log(picks[k]);
-}
-console.log("used array: " + used);
+  stud1.innerHTML = '&nbsp;'
+  stud2.innerHTML = '&nbsp;'
+  var Copy1 = [];
+  var Copy2 = [];
+  Copy1 = students.slice(90, students.length/2);
+  Copy2 = students.slice(students.length/2+1,students.length); 
+  var rand1 = Copy1.splice(Math.floor(Math.random() * Copy1.length), 1);
+  var rand2 = Copy2.splice(Math.floor(Math.random() * Copy1.length), 1);
   var x = window.setInterval(() => {
     if (colors[cur] === undefined) {
       window.clearInterval(x);
@@ -113,13 +99,14 @@ console.log("used array: " + used);
   }, 200);
 }
 
-
-
 var aListOnClick = function (event) {
-  if (event.target.tagName === 'UL') {
+  if (event.target.tagName === 'LI') {
     event.target.style.textDecoration = 'line-through';
+    var numPace = students.indexOf(event.target.innerText);
+    var removeFromList = students.splice(numPlace, 1);
   }
 }
+
 
 
 
