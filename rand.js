@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   pickButton = document.getElementById('pickButton');
   pairButton = document.getElementById('pairButton');
   choice = document.getElementById('choice');
+  Copy1 = document.getElementById('Copy1');
+  Copy2 = document.getElementById('Copy2');
   aList = document.getElementById('aList');
 
   pickButton.addEventListener('click', pickOnClick );
@@ -73,24 +75,22 @@ var pickOnClick = function (event) {
     cur += 1;
   }, 200);
 }
-
 var pairOnClick = function (event) {
-choice.innerHTML = '&nbsp;'
-var rand = students.splice(Math.floor(Math.random() * (students.length),1);
-var rand1 = students.splice(Math.floor(Math.random() * students.length),1);
-  if (colors[cur] === undefined) {
-    window.clearInterval(x);
-    cur = 0;
-    choice.innerText = rand + ' ' + rand1;
-
-    return;
-  }
-  if (colors[cur]) header.style.color = colors[cur];
-  if (colors[cur-1]) body.style.backgroundColor = colors[cur-1];
-  cur += 1;
-}, 200);
+  choice.innerHTML = '&nbsp;'
+  var rand = students.splice(Math.floor(Math.random() * students.length),1);
+  var rand1 = students.splice(Math.floor(Math.random() * students.length),1);
+  var x = window.setInterval(() => {
+    if (colors[cur] === undefined) {
+      window.clearInterval(x);
+      cur = 0;
+      choice.innerText = rand + ' ' + rand1;
+      return;
+    }
+    if (colors[cur]) header.style.color = colors[cur];
+    if (colors[cur-1]) body.style.backgroundColor = colors[cur-1];
+    cur += 1;
+  }, 200);
 }
-
 var aListOnClick = function (event) {
   if (event.target.tagName === 'LI') {
     event.target.style.textDecoration = 'line-through';
@@ -98,3 +98,4 @@ var aListOnClick = function (event) {
     var removeFromList = students.splice(numPlace, 1);
   }
 }
+
