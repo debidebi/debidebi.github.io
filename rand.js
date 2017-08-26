@@ -77,12 +77,11 @@ var pickOnClick = function (event) {
 var pairOnClick = function (event) {
 choice.innerHTML = '&nbsp;'
 var rand = students.splice(Math.floor(Math.random() * (students.length),1);
-var rand = students.splice(Math.floor(Math.random() * students.length),1);
+var rand1 = students.splice(Math.floor(Math.random() * students.length),1);
   if (colors[cur] === undefined) {
     window.clearInterval(x);
     cur = 0;
-    choice.innerText = rand + ' ' + rand;
-
+    choice.innerText = rand + ' ' + rand1;
     return;
   }
   if (colors[cur]) header.style.color = colors[cur];
