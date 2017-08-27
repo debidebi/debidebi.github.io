@@ -4,8 +4,7 @@ var header;
 var body;
 var choice;
 var aList;
-var numPlace;
-var removeFromList;
+
 
 
 var students = [
@@ -43,11 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
   header = document.getElementById('header');
   pickButton = document.getElementById('pickButton');
   pairButton = document.getElementById('pairButton');
-  choice = document.getElementById('choice');
-  Copy1 = document.getElementById('Copy1');
-  Copy2 = document.getElementById('Copy2');
+  choice = document.getElementById('choice')
   aList = document.getElementById('aList');
-
   pickButton.addEventListener('click', pickOnClick );
   pairButton.addEventListener('click', pairOnClick );
   aList.addEventListener('click', aListOnClick );
