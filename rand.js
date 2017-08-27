@@ -27,6 +27,26 @@ var students = [
   "Krystal"
 ];
 
+var Titles = [
+  "The Skipper",
+  "The Millionaire",
+  "His Wife",
+  "The Movie Star",
+  "Professor",
+  "The Just",
+  "The Oustanding",
+  "The Excellent",
+  "The Deaf",
+  "The Mother of Dragons",
+  "The Eccentric",
+  "The Hungry",
+  "Jontronics",
+  "The Webmaster",
+  "The Troll Haired",
+  "The Javascript Joker"
+];
+
+
 var colors = [
   'hotpink',
   'orange',
@@ -53,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // build the attendance list
   for (let i=0; i<students.length; i++) {
     let li = document.createElement('li');
-    li.innerText = students[i];
+    li.innerText = students[i].toUpperCase;
     aList.append(li);
   }
 });
@@ -76,12 +96,13 @@ var pickOnClick = function (event) {
 
 var pairOnClick = function (event) {
 choice.innerHTML = '&nbsp;'
-var rand = students.splice(Math.floor(Math.random() * (students.length),1);
-var rand1 = students.splice(Math.floor(Math.random() * students.length),1);
+ var rand = students.splice(Math.floor(Math.random() * (students.length),1);
+var rand1 = students.splice(Math.floor(Math.random() * (students.length),1);
+
   if (colors[cur] === undefined) {
     window.clearInterval(x);
     cur = 0;
-    choice.innerText = rand + ' ' + rand1;
+    choice.innerText = rand + ' \u2764\uFE0F' + rand1;
     return;
   }
   if (colors[cur]) header.style.color = colors[cur];
