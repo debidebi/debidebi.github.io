@@ -1,3 +1,5 @@
+
+
 var pickButton;
 var pairButton;
 var header;
@@ -79,7 +81,7 @@ var pairOnClick = function (event) {
     if (colors[cur] === undefined) {
       window.clearInterval(x);
       cur = 0;
-      choice.innerText = rand + ' \u2764\uFE0F ' + rand1;
+      choice.innerText = rand + '\u2764\uFE0F '  + rand1;
       return;
     }
     if (colors[cur]) header.style.color = colors[cur];
@@ -94,4 +96,3 @@ var aListOnClick = function (event) {
     var removeFromList = students.splice(numPlace, 1);
   }
 }
-
