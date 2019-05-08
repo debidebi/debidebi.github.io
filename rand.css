@@ -157,6 +157,27 @@ margin-right: 20px;
   }
 }
 
+@keyframes fadeIn{
+  0% {
+    position: absolute;
+    top: -3rem;
+    opacity: 0;
+  }
+
+  75% {
+    position: absolute;
+    top: 45%;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+
+}
+
+
 .first-text {
   font-size: 4.4rem;
   position: absolute;
